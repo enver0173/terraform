@@ -12,6 +12,6 @@ resource "aws_instance" "web" {
  
 
 tags = { 
-    Name = "HelloWorld".countAAS
+    Name = "HelloWorld${count.index}"
   } 
 } 
