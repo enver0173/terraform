@@ -1,3 +1,18 @@
 output "buclet_name" {
     value = backend-enver4773
 }
+
+output "aws_security_group" {
+    value =  "allow_tls" 
+}
+
+output "key_name" {
+    value =  "aws_key_pair.deployer.key_name" 
+}
+
+output "password" {
+    value =  "password" 
+}
+
+
+
