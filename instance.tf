@@ -16,12 +16,5 @@ resource "aws_instance" "web" {
 
    tags = { 
      Name = "HelloWorld${count.index +1}"
-  } 
+   } 
 } 
-
-resource "aws_instance" "imported" {
-  ami           = "ami-0b2d8d1abb76a53d8" 
-  key_name = aws_key_pair.deployer.key_name
-  security_groups = ["allow_ssh1"]
-  instance_type="t2.micro" 
-}
