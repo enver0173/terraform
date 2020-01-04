@@ -62,7 +62,7 @@ then
    echo "e.g. s3_tfstate_file=\"infrastructure.tfstate\"" 
 return 1 
 fi 
-cat << 'EOF' > "$DIR/backend.tf"
+cat << EOF > "$DIR/backend.tf"
 terraform { 
 backend "s3" {
 bucket = "${S3BUCKET}" 
@@ -72,3 +72,4 @@ region = "${S3BUCKETREGION}"
 } 
 EOF 
 cat backend.tf 
+rm -rf  .terraform/terraform.tfstate
