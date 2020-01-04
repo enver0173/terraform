@@ -1,4 +1,3 @@
-#!/bin/bash
 echo $0
 if [ “$0” = “$BASH_SOURCE” ]
 then
