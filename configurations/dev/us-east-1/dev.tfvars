@@ -1,6 +1,10 @@
-ami           = "ami-0b2d8d1abb76a53d8" 
-instance_type = "t2.micro" 
-count_instance         = 4
-associate_public_ip_address = "true"
-user            = "ec2-user"
-ssh_key_location = "~/.ssh/id_rsa"
+enviromment = "dev"
+s3_bucket = "wordpress-farrukh-2019-dev"
+s3_folder_project = "application"
+s3_folder_region = "us-west-1"
+s3_folder_type = "state"
+s3_tfstate_file = "infrastructure.tfstate"
+
+
+name = "wordpress1"
+cidr = "10.0.0.0/16"
