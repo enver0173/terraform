@@ -14,7 +14,7 @@ output "ami" {
     value = data.aws_ami.centos.id
 } 
 
-resource "aws_key_pair" "deployer" { 
+resource "aws_key_pair" "towerkey" { 
   key_name   = "towerkey" 
   public_key = file("~/.ssh/id_rsa.pub") 
 } 
