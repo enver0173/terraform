@@ -10,15 +10,13 @@ data "aws_ami" "ubuntu" {
     most_recent = true
     owners = ["679593333241"]
 }
-output "ami" {
+output "centos" {
     value = data.aws_ami.centos.id
 } 
-
 resource "aws_key_pair" "towerkey" { 
   key_name   = "towerkey" 
   public_key = file("~/.ssh/id_rsa.pub") 
 } 
-
 resource "aws_instance" "tower" {
   ami           = "data.aws_ami.centos.id
   instance_type = "t2.micro"
@@ -34,16 +32,14 @@ resource "aws_instance" "tower" {
         "sudo yum install -y epel-release",
         ]
     }
-
   tags = {
     Name = "HelloWorld"
   }
 }
-
 resource "aws_route53_record" "tower" {
-    zone_id = "ZVFBE5NWUNXEY"
+  zone_id = "ZVFBE5NWUNXEY"
   name    = "tower.example.com"
   type    = "A"
   ttl     = "300"
   records = [aws_instance.web.public_ip]
-  } 
+  }
