@@ -1,6 +1,3 @@
-provider "aws" {
-    region = "us-west-2" 
-} 
 data "aws_ami" "ubuntu" {
     filter {
         name = "root-device-type"
@@ -22,7 +19,7 @@ resource "aws_key_pair" "deployer" {
   public_key = file("~/.ssh/id_rsa.pub") 
 } 
 
-resource "aws_instance" "web" {
+resource "aws_instance" "tower" {
   ami           = "data.aws_ami.centos.id
   instance_type = "t2.micro"
   key_name      = aws_key_pair.towerkey.key_name
